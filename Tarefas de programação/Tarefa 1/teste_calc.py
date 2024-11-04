@@ -1,14 +1,13 @@
-from calc import Calculadora
+from modulo_calc import soma, subtracao, multiplicacao, divisao
 
 numero1, numero2 = 6,5
 
-calculadora = Calculadora()
-soma = calculadora.soma(numero1, numero2)
-sub = calculadora.subtracao(numero1, numero2)
-mult = calculadora.multiplicacao(numero1, numero2)
-div = calculadora.divisao(numero1, numero2)
+somar = soma(operando_a=numero1, operando_b=numero2)
+subtrair = subtracao(operando_a=numero1, operando_b=numero2)
+multiplicar = multiplicacao(operando_a=numero1, operando_b=numero2)
+dividir = divisao(operando_a=numero1, operando_b=numero2)
 
-print(f'Soma: {soma}')
-print(f'Subtração: {sub}')
-print(f'Multiplicação: {mult}')
-print(f'Divisão: {div}')
+print(f'Soma: {somar}')
+print(f'Subtração: {subtrair}')
+print(f'Multiplicação: {multiplicar}')
+print(f'Divisão: {dividir}')
