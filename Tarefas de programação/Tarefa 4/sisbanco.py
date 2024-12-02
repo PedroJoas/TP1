@@ -4,39 +4,31 @@ from abc import ABC, abstractmethod
 def ContaAbstrata(ABC):
 
     def __init__(self, numero: str) -> None:
-        pass
+        self.__numero = numero
+        self.__saldo = 0
     
-    def creditar(self, valor):
+    def creditar(self, valor) -> None:
         self.__saldo += valor
 
     @abstractmethod
     def debitar(self, valor) -> None:
         pass
     
-    def get_numero(self):
+    def get_numero(self) -> str:
         return self.__numero
     
-    def get_saldo(self):
+    def get_saldo(self) -> float:
         return self.__saldo
 
 # CLASSE CONTA
 class Conta(ContaAbstrata):
 
-    def __init__(self, numero):
-        self.__numero = numero
-        self.__saldo = 0
+    def __init__(self, numero: str) -> None:
+        super().__init__(numero)
 
-    def creditar(self, valor):
-        self.__saldo += valor
-
-    def debitar(self, valor):
+    def debitar(self, valor) -> None:
         self.__saldo -= valor
     
-    def get_numero(self):
-        return self.__numero
-    
-    def get_saldo(self):
-        return self.__saldo
     
 # CLASSE CONTA POUPANÇA
 class ContaPoupanca(Conta):
